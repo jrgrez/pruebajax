@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  complaint: one
 
 two:
   name: MyString
-  complaint: two
