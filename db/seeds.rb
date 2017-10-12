@@ -20,5 +20,5 @@ User.create(email: "joaquingrez@gmail.com", password: "holahola", password_confi
 end
 
 250.times do
-	Complaint.create!(user_id: User.order("RANDOM()").first, company_id: Company.order("RANDOM()").first, complaint: Faker::Lorem.sentences(1))
+	Complaint.create!(user: User.order("RANDOM()").first, company: Company.order("RANDOM()").first, complaint: Faker::Lorem.sentences(1))
 end
