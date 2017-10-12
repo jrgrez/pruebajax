@@ -2,11 +2,12 @@
 
 <h1>Complaints</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Company</th>
       <th>User</th>
+      <th>Complaint</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= complaint.company %></td>
         <td><%= complaint.user %></td>
+        <td><%= complaint.complaint %></td>
         <td><%= link_to 'Show', complaint %></td>
         <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
         <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -26,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Complaint', new_complaint_path %>
+<%= link_to 'New Complaint' %>

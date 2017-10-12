@@ -11,6 +11,8 @@ class CompaniesController < ApplicationController
   # GET /companies/1
   # GET /companies/1.json
   def show
+    @company = Company.find(params[:id])
+    @complaints = Complaint.where(company_id: params[:id])
   end
 
   # GET /companies/new
@@ -20,6 +22,10 @@ class CompaniesController < ApplicationController
 
   # GET /companies/1/edit
   def edit
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   # POST /companies

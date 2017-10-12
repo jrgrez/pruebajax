@@ -10,11 +10,13 @@ class ComplaintsController < ApplicationController
   # GET /complaints/1
   # GET /complaints/1.json
   def show
+    @company = Company.find(params[:company_id])
   end
 
   # GET /complaints/new
   def new
     @complaint = Complaint.new
+    @company = Company.find(params[:company_id])
   end
 
   # GET /complaints/1/edit
@@ -69,6 +71,6 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.require(:complaint).permit(:company_id, :user_id)
+      params.require(:complaint).permit(:company_id, :user_id, :complaint)
     end
 end

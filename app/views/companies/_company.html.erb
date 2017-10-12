@@ -2,5 +2,8 @@
 	<td><%= company.name %></td>
 	<td><%= link_to 'Show', company %></td>
 	<td><%= link_to 'Edit', edit_company_path(company) %></td>
+	<td><%= link_to 'Editar', edit_company_path(company),  {:remote => true, 'data-toggle' =>  "modal", 'data-target' => '#modal-window'}  %></td>
 	<td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?', remote: true } %></td>
 </tr>
+
+<div id="modal-window" class="modal hide fade" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"></div>

@@ -1,9 +1,26 @@
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<h1><%= @company.name %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Complaint</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @complaints.each do |complaint| %>
+      <tr>
+        <td><%= complaint.user %></td>
+        <td><%= complaint.complaint %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Nuevo Reclamo', new_company_complaint_path(@company) %>
